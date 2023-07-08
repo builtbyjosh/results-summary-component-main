@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Results summary component</title>
@@ -12,36 +14,179 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    body{
+      font-family: 'Hanken Grotesk';
+      font-size: 18px;
+      background-color: hsl(221, 100%, 96%);
+    }
+    .container {
+      display: flex;      
+      flex-direction: row;
+      justify-content:center;
+      align-items: center;
+      margin: auto;
+      margin-top: 50px;
+      width: 600px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 8px 8px 10px  lightblue;
+    }
+    @media (max-width: 500px){
+      .container {
+        flex-direction: column;
+      }
+    }
+    .score-result-container {
+      background-image: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+      border-radius: 15px;
+      width: 300px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content:center;
+      text-align: center;
+      color: white;
+    }
+    .score-result {
+      width: 85%;
+    }
+    .score-result h3 {
+      color: hsl(241, 100%, 89%)
+    }
+    .score-circle {
+      background-image: linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+      width: 150px;
+      height: 150px;      
+      border-radius: 50%;
+      align-content: center;
+      margin: auto; 
+            
+    }
+    .score-circle-text h1 {
+      font-size: 32px;
+      line-height: 32px;
+    }
+    .score-circle-text p {
+      line-height: 15px;
+      color: hsl(241, 100%, 89%)
+    }
+
+    .score-breakdown{
+      width: 300px;
+      height: 400px;      
+      padding-left: 20px;
+      padding-right: 10px;
+    }
+    .score-breakdown-individual {
+      display: flex;
+      width: 100%;      
+      justify-content: space-around;
+      border-radius: 10px;
+      margin: 10px 0px;
+    }
+    .score-breakdown-individual div {
+      display: flex;
+    }
+    .score-breakdown-individual img{
+      margin-right: 10px;
+    }
+    .light-red {
+      color:hsl(0, 100%, 67%);
+      background-color: hsla(0, 100%, 67%,0.1);      
+    }
+    .orangey-yellow {
+      color: hsl(39, 100%, 56%);
+      background-color: hsla(39, 100%, 56%, 0.1);
+    }
+    .green-teal{
+      color: hsl(166, 100%, 37%);
+      background-color: hsla(166, 100%, 37%,0.1);
+    }
+    .cobalt-blue {
+      color: hsl(234, 85%, 45%);
+      background-color: hsla(234, 85%, 45%, 0.1);
+    }
+    button {
+      width: 100%;
+      height: 25px;
+      color: white;
+      background-color: hsl(224, 30%, 27%);
+      border-radius: 15px;
+    }
   </style>
 </head>
 <body>
+  <div class="container">
+    <div class="score-result-container">
+      <div class="score-result">
 
-  Your Result
-  76
-  of 100
+        <h3>
+          Your Result
+        </h3>
+        <div class="score-circle">
+          <div class="score-circle-text">
 
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
+            <h1>
+              76
+            </h1>
+            <p>
+              of 100
+            </p>
+          </div>
+      </div>
+      <div>
+        <h2>
+          Great
+        </h2>
+        <p>
+          You scored higher than 65% of the people who have taken these tests.
+        </p>
+      </div>
+    </div>
+  </div>
+<div class="score-breakdown">
+  <h3>      
+    Summary
+  </h3>
+  <div class="score-breakdown-individual light-red">
+    <div>
+      <img src="assets/images/icon-reaction.svg" alt="reaction icon">
+      <p>Reaction</p>
+    </div>
+    <p><strong>80</strong> / 100</p>
+  </div>
+  <div class="score-breakdown-individual orangey-yellow">
+    <div>
+      <img src="assets/images/icon-memory.svg" alt="memory icon">
+      <p>Memory</p>
+    </div>
+    <p><strong>92</strong> / 100</p>
+  </div>
+  <div class="score-breakdown-individual green-teal">
+    <div>
+      <img src="assets/images/icon-verbal.svg" alt="verbal icon">
+      <p>Verbal</p>
+    </div>
+    <p><strong>61</strong> / 100</p>
+  </div>
+  <div class="score-breakdown-individual cobalt-blue">
+    <div>
+      <img src="assets/images/icon-visual.svg" alt="visual icon">
+      <p>Visual</p>
+    </div>
+    
+    <p><strong>72</strong> / 100</p>
+  </div>
+  <button>    
+    Continue
+  </button>
+</div>
 
-  Reaction
-  80 / 100
-
-  Memory
-  92 / 100
-
-  Verbal
-  61 / 100
-
-  Visual
-  72 / 100
-
-  Continue
-  
-  <div class="attribution">
+<!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
+</div>
 </body>
 </html>
