@@ -46,11 +46,6 @@
         border-radius: 25px;
         box-shadow: 8px 8px 10px lightblue;
       }
-      @media (max-width: 500px) {
-        .container {
-          flex-direction: column;
-        }
-      }
       .score-result-container {
         background-image: linear-gradient(
           hsl(252, 100%, 67%),
@@ -158,6 +153,22 @@
         border-radius: 20px;
         margin: 15px 0;
         font-size: large;
+      }
+      @media (max-width: 500px) {
+        .container {
+          flex-direction: column;
+          height: 950px;
+          width: 300px;
+        }
+        .score-breakdown {
+          margin: auto;
+        }
+        .score-breakdown-individual {
+          width: 240px;
+        }
+        button {
+          width: 240px;
+        }
       }
     </style>
   </head>
